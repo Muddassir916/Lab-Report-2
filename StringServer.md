@@ -1,3 +1,6 @@
+# **Greetings!**
+## **Part 1**
+Code for `StringServer`:
 ``` java
 import java.io.IOException;
 import java.net.URI;
