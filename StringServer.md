@@ -48,3 +48,7 @@ class StringServer {
     }
 }
 ```
+
+Examples of `StringServer`:
+![Image](ge.png)
+![Image](imge.png)
