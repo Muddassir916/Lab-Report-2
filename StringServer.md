@@ -53,14 +53,13 @@ Examples of `StringServer`:
 
 ![Image](ge.png)
 
-In this screenshot, the methods we use are url.getPath(), which also uses the methods of .equals() to see if a part of the url, which is another value, is what we are looking for. We also used the likes of .split(), specifically .split("=") which along with .startsWith("s="), we are able to grab whatever comes after it. Regarding the values of relevant fields, we firstly set the String msg to a blank string, so that we can add to it as we please.
+In this screenshot, the methods we use are url.getPath(), which also uses the methods of .equals() to see if a part of the url, which is another value, is what we are looking for. We also used the likes of .split(), specifically .split("=") which along with .startsWith("s="), we are able to grab whatever comes after it. Regarding the values of relevant fields, we first set the String msg to a blank string, so that we can add to it as we please.
 
 ---
 
 ![Image](imge.png)
 
-In this screenshot, we are using many of the same methods, {url.getPath(), .equals(), .split(), .startsWith()}, but the main difference is  the line --> `msg += query + "\n"`; by doing this, it is appending and it changes at each request, adding to the previous string input we included. The value from the first input is appended, and it awaits the second input to include on a seperate line under the first one. 
-
+In this screenshot, we are using many of the same methods, {url.getPath(), .equals(), .split(), .startsWith()}, but the main difference is the line –> msg += query + "\n"; by doing this, it is appending and it changes at each request, adding to the previous string input we included. The value from the first input is appended, and it awaits the second input to include on a separate line under the first one.
 
 ## **Part 2**
 
@@ -91,9 +90,9 @@ The result of the code above (It passes):
 
 ![Image](pass.png)
 
-As you can see to the left of the code, there is a green check mark, meaning after we run the test, it sucessfully passes, and returns the same value, which is 24. 
+As you can see to the left of the code, there is a green check mark, meaning after we run the test, it successfully passes and returns the same value, which is 24.
 
-To fix the code to acommadate the bug in the first test, we simply change a small error:
+To fix the code to accommodate the bug in the first test, we simply change a small error:
 
 Before:
 ``` java
