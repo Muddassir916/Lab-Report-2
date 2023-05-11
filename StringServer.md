@@ -123,5 +123,7 @@ class EvensExample {
 
 If you noticed, the only thing that changed was the line where we updated the sum value. In the original code, it does `i + 1`, which updates the code from being an already even index to becoming an odd index, which means it takes the odd value instead of the even ones. To fix this, simply remove the `+1`, and the test passes with flying colors!
 
+![Image](pass2.png)
+
 ## **Part 3**
 In the past two weeks, I did not know you are able to update the info of a webpage with methods inputted through the URL. I assumed to update the contents of a webpage, you would need to go to the specific code and input it there, but to be able to change the value from the site itself was pretty cool. Setting up a local host 4000 was also foreign to me, but I have heard it being mentioned, but now I understand how these localhosts work. I also didn't know browsers usually run on 80 or 443, so that was cool to know. 
