@@ -53,13 +53,14 @@ Examples of `StringServer`:
 
 ![Image](ge.png)
 
-In this screenshot, we added our first string 'Hello' by using `/add-message?s=Hello`. The method being called is `handleRequest`, which takes the url, looks at the end of it and if the path is equal to `/add-message?s=[ANYTHING]`, it adds it. The most relevant arguement is likely `/add-message?s=[ANYTHING]`, because typing it precisely like so is the only way for the server to update the string value. When we first run it, no values are changed, because it is the first string we added. 
-`/add-message?s=
+In this screenshot, the methods we use are url.getPath(), which also uses the methods of .equals() to see if a part of the url, which is another value, is what we are looking for. We also used the likes of .split(), specifically .split("=") which along with .startsWith("s="), we are able to grab whatever comes after it. Regarding the values of relevant fields, we firstly set the String msg to a blank string, so that we can add to it as we please.
+
 ---
 
 ![Image](imge.png)
 
-In this screenshot, we added our second string 'How are you' by using `/add-message?s=How are you`, which included it along with our pre-existing string 'Hello'. It uses the same method `handleRequest` in the class `Handler`, but it prints on the second line because of the `/n` in the code, where it moves it to a new line, and following the old added string. The most relevant arguement is also `/add-message?s=[ANYTHING]`, because it adds to the other string. The value, however, will be updated, so it does change the value when this is called a second time. 
+In this screenshot, we are using many of the same methods, {url.getPath(), .equals(), .split(), .startsWith()}, but the main difference is  the line --> `msg += query + "\n"`; by doing this, it is appending and it changes at each request, adding to the previous string input we included. The value from the first input is appended, and it awaits the second input to include on a seperate line under the first one. 
+
 
 ## **Part 2**
 
@@ -74,6 +75,9 @@ This code displays a failure-inducing input for the buggy program
 The result of the code above (It fails): 
 
 ![Image](fail.png)
+
+As you can see to the right of the code, the code expected the value 19 (the correct value), but instead got the number 15. 
+
 ---
 This code doesnt not display a failure-inducing input for the buggy program
 ``` java
@@ -87,6 +91,37 @@ The result of the code above (It passes):
 
 ![Image](pass.png)
 
+As you can see to the left of the code, there is a green check mark, meaning after we run the test, it sucessfully passes, and returns the same value, which is 24. 
+
+To fix the code to acommadate the bug in the first test, we simply change a small error:
+
+Before:
+``` java
+class EvensExample {
+  static int sumEvenIndices(int[] nums) {
+    int sum = 0;
+    for(int i = 0; i < nums.length; i += 2) {
+      sum += nums[i + 1];
+    }
+    return sum;
+  }
+}
+```
+
+After:
+``` java
+class EvensExample {
+  static int sumEvenIndices(int[] nums) {
+    int sum = 0;
+    for(int i = 0; i < nums.length; i += 2) {
+      sum += nums[i];
+    }
+    return sum;
+  }
+}
+```
+
+If you noticed, the only thing that changed was the line where we updated the sum value. In the original code, it does `i + 1`, which updates the code from being an already even index to becoming an odd index, which means it takes the odd value instead of the even ones. To fix this, simply remove the `+1`, and the test passes with flying colors!
 
 ## **Part 3**
 In the past two weeks, I did not know you are able to update the info of a webpage with methods inputted through the URL. I assumed to update the contents of a webpage, you would need to go to the specific code and input it there, but to be able to change the value from the site itself was pretty cool. Setting up a local host 4000 was also foreign to me, but I have heard it being mentioned, but now I understand how these localhosts work. I also didn't know browsers usually run on 80 or 443, so that was cool to know. 
